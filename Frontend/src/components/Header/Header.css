@@ -1,0 +1,251 @@
+/* ============================================================
+   StockSync Modern Header Styling (Theme-Adaptive)
+   ============================================================ */
+
+.stocksync-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  height: 64px;
+  width: 100%;
+  z-index: 1030;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.stocksync-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  padding: 0 clamp(16px, 2.5vw, 36px);
+  gap: 16px;
+}
+
+/* ------------------------------------------------------------
+   Left: Brand Logo & Title
+   ------------------------------------------------------------ */
+.stocksync-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.stocksync-logo-badge {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stocksync-brand-wrap:hover .stocksync-logo-badge {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+}
+
+.stocksync-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stocksync-brand-name {
+  color: var(--text);
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.stocksync-version-pill {
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  border: 1px solid var(--primary-border, rgba(37, 99, 235, 0.2));
+  padding: 1px 6px;
+  border-radius: 12px;
+  letter-spacing: 0.2px;
+}
+
+.stocksync-brand-tagline {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* ------------------------------------------------------------
+   Center: Desktop Navigation
+   ------------------------------------------------------------ */
+.stocksync-center-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface-subtle);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.stocksync-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: 7px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.stocksync-nav-link:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.stocksync-nav-link.active {
+  color: var(--primary);
+  background: var(--surface);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+}
+
+.stocksync-nav-alert-badge {
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  line-height: 1.2;
+  margin-left: 2px;
+}
+
+/* ------------------------------------------------------------
+   Right: Actions & Theme Toggle
+   ------------------------------------------------------------ */
+.stocksync-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.stocksync-system-live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--channel-direct-bg);
+  color: var(--channel-direct);
+  border: 1px solid var(--channel-direct-border);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 16px;
+  white-space: nowrap;
+}
+
+.system-live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--channel-direct);
+  box-shadow: 0 0 6px var(--channel-direct);
+  animation: pulse-live 2s infinite;
+}
+
+@keyframes pulse-live {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; box-shadow: 0 0 10px var(--channel-direct); }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.theme-toggle-btn:hover {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--muted);
+  transform: translateY(-1px);
+}
+
+/* Mobile Hamburger Button */
+.stocksync-mobile-hamburger {
+  background: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  color: var(--text);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.stocksync-mobile-hamburger:hover {
+  background: var(--surface);
+}
+
+/* Mobile Dropdown Menu */
+.stocksync-mobile-menu {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 1025;
+  animation: slideDownMobile 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideDownMobile {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.stocksync-mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  text-decoration: none;
+  margin-bottom: 3px;
+  transition: all 0.15s ease;
+}
+
+.stocksync-mobile-nav-item:hover,
+.stocksync-mobile-nav-item.active {
+  color: var(--primary);
+  background: var(--surface-subtle);
+}

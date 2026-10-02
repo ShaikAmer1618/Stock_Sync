@@ -1,0 +1,233 @@
+@import "tailwindcss";
+
+/* ============================================================
+   StockSync Modern Design System & Theme Engine
+   Default: Sophisticated Modern Light Theme
+   Theme Toggle: Clean Slate Dark Theme
+   ============================================================ */
+
+:root,
+html[data-theme="light"],
+html[data-bs-theme="light"] {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-subtle: #eff6ff;
+  --primary-border: #bfdbfe;
+
+  --accent: #0284c7;
+  --secondary: #6366f1;
+
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --surface-card: #ffffff;
+  --surface-subtle: #f1f5f9;
+  --surface-hover: #f8fafc;
+
+  --text: #0f172a;
+  --text-secondary: #475569;
+  --muted: #64748b;
+
+  --border: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  --border-accent: #cbd5e1;
+
+  --card-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --modal-backdrop: rgba(15, 23, 42, 0.5);
+
+  --channel-swiggy: #ea580c;
+  --channel-swiggy-bg: #fff7ed;
+  --channel-swiggy-border: #ffedd5;
+
+  --channel-zomato: #dc2626;
+  --channel-zomato-bg: #fef2f2;
+  --channel-zomato-border: #fee2e2;
+
+  --channel-direct: #059669;
+  --channel-direct-bg: #ecfdf5;
+  --channel-direct-border: #d1fae5;
+
+  --bs-body-bg: #f8fafc;
+  --bs-body-color: #0f172a;
+  --bs-border-color: #e2e8f0;
+  --bs-card-bg: #ffffff;
+  --bs-card-border-color: #e2e8f0;
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html[data-theme="dark"],
+html[data-bs-theme="dark"] {
+  --primary: #3b82f6;
+  --primary-hover: #60a5fa;
+  --primary-subtle: rgba(59, 130, 246, 0.12);
+  --primary-border: rgba(59, 130, 246, 0.25);
+
+  --accent: #38bdf8;
+  --secondary: #818cf8;
+
+  --background: #090d16;
+  --surface: #0f172a;
+  --surface-card: #131d31;
+  --surface-subtle: #1e293b;
+  --surface-hover: #1e293b;
+
+  --text: #f8fafc;
+  --text-secondary: #94a3b8;
+  --muted: #64748b;
+
+  --border: #1e293b;
+  --border-subtle: #1e293b;
+  --border-accent: rgba(59, 130, 246, 0.3);
+
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.5);
+  --modal-backdrop: rgba(0, 0, 0, 0.7);
+
+  --channel-swiggy: #fb923c;
+  --channel-swiggy-bg: rgba(234, 88, 12, 0.12);
+  --channel-swiggy-border: rgba(234, 88, 12, 0.25);
+
+  --channel-zomato: #f87171;
+  --channel-zomato-bg: rgba(220, 38, 38, 0.12);
+  --channel-zomato-border: rgba(220, 38, 38, 0.25);
+
+  --channel-direct: #34d399;
+  --channel-direct-bg: rgba(5, 150, 105, 0.12);
+  --channel-direct-border: rgba(5, 150, 105, 0.25);
+
+  --bs-body-bg: #090d16;
+  --bs-body-color: #f8fafc;
+  --bs-border-color: #1e293b;
+  --bs-card-bg: #0f172a;
+  --bs-card-border-color: #1e293b;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background) !important;
+  color: var(--text) !important;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+  color: var(--text);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.15s ease;
+}
+
+/* ============================================================
+   Bootstrap Harmonization Overrides (Theme-Aware)
+   ============================================================ */
+
+/* Theme-adapt background utility classes */
+html[data-theme="light"] .bg-dark,
+html[data-bs-theme="light"] .bg-dark {
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+}
+
+html[data-theme="light"] .text-light,
+html[data-bs-theme="light"] .text-light {
+  color: var(--text) !important;
+}
+
+html[data-theme="light"] .text-secondary,
+html[data-bs-theme="light"] .text-secondary {
+  color: var(--muted) !important;
+}
+
+html[data-theme="light"] .border-secondary,
+html[data-bs-theme="light"] .border-secondary {
+  border-color: var(--border) !important;
+}
+
+/* Card override */
+.card {
+  background-color: var(--surface-card) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px !important;
+  box-shadow: var(--card-shadow) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* Form inputs & selects */
+.form-control, .form-select {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: var(--surface) !important;
+  border-color: var(--primary) !important;
+  color: var(--text) !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+  outline: none !important;
+}
+
+/* Clean Button Base Classes */
+.btn-primary {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

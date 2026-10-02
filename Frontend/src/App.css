@@ -1,0 +1,636 @@
+/* ============================================================
+   StockSync Modern Application Styles (Theme-Adaptive)
+   ============================================================ */
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--background);
+  font-family: var(--font-sans);
+  color: var(--text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-layout-wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+.app-container {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: clamp(14px, 2vw, 28px);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-content {
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.master-dashboard-tab-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* ------------------------------------------------------------
+   Alarm Banner Section - Coral Warning
+   ------------------------------------------------------------ */
+.alarm-banner {
+  width: 100%;
+  background-color: #fff1f2 !important;
+  border: 1px solid #fecdd3 !important;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.06);
+  box-sizing: border-box;
+}
+
+html[data-theme="dark"] .alarm-banner {
+  background-color: rgba(225, 29, 72, 0.1) !important;
+  border-color: rgba(244, 63, 94, 0.3) !important;
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.15);
+}
+
+.alarm-banner-icon-bubble {
+  width: 40px;
+  height: 40px;
+  background-color: #ffe4e6;
+  border: 1px solid #fecdd3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+html[data-theme="dark"] .alarm-banner-icon-bubble {
+  background-color: rgba(244, 63, 94, 0.16);
+  border-color: rgba(244, 63, 94, 0.35);
+}
+
+.alarm-banner-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #9f1239;
+  margin: 0 0 3px 0;
+}
+
+html[data-theme="dark"] .alarm-banner-title {
+  color: #fda4af;
+}
+
+.alarm-banner-desc {
+  font-size: 12.5px;
+  color: #be123c;
+  margin: 0;
+}
+
+html[data-theme="dark"] .alarm-banner-desc {
+  color: #fecdd3;
+}
+
+.alarm-action-btn {
+  background-color: #e11d48;
+  color: #ffffff;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(225, 29, 72, 0.25);
+  white-space: nowrap;
+}
+
+.alarm-action-btn:hover {
+  background-color: #be123c;
+  transform: translateY(-1px);
+}
+
+.alarm-view-tab-btn {
+  background-color: var(--surface);
+  color: #9f1239;
+  border: 1px solid #fecdd3;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+html[data-theme="dark"] .alarm-view-tab-btn {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fecdd3;
+  border-color: rgba(244, 63, 94, 0.35);
+}
+
+.alarm-view-tab-btn:hover {
+  background-color: #ffe4e6;
+}
+
+/* List of critical item & platform cards inside alarm banner */
+.alarm-items-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-top: 1px dashed #fecdd3;
+  padding-top: 12px;
+}
+
+html[data-theme="dark"] .alarm-items-list {
+  border-top-color: rgba(244, 63, 94, 0.3);
+}
+
+.alarm-item-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--surface);
+  border: 1px solid #fecdd3;
+  border-radius: 8px;
+  padding: 5px 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+html[data-theme="dark"] .alarm-item-chip {
+  background-color: #0f172a;
+  border-color: rgba(244, 63, 94, 0.35);
+}
+
+.alarm-chip-dish {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.alarm-chip-platform {
+  font-size: 11px;
+  font-weight: 600;
+  background-color: var(--surface-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.alarm-chip-qty {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e11d48;
+}
+
+.alarm-chip-delist-btn {
+  background-color: #ffe4e6;
+  border: 1px solid #fecdd3;
+  color: #be123c;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.alarm-chip-delist-btn:hover {
+  background-color: #e11d48;
+  color: #ffffff;
+}
+
+.alarm-item-chip.chip-out-of-stock {
+  border-color: #fca5a5;
+  background-color: #fef2f2;
+}
+
+html[data-theme="dark"] .alarm-item-chip.chip-out-of-stock {
+  border-color: rgba(239, 68, 68, 0.6);
+  background-color: rgba(239, 68, 68, 0.12);
+}
+
+.alarm-item-chip.chip-out-of-stock .alarm-chip-delist-btn {
+  background-color: #ef4444;
+  border-color: #dc2626;
+  color: #ffffff;
+}
+
+/* ------------------------------------------------------------
+   All Safe Notification Banner - Gentle Emerald
+   ------------------------------------------------------------ */
+.alarm-safe-banner {
+  width: 100%;
+  background-color: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+html[data-theme="dark"] .alarm-safe-banner {
+  background-color: rgba(16, 185, 129, 0.08);
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.alarm-safe-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #047857;
+}
+
+html[data-theme="dark"] .alarm-safe-left {
+  color: #34d399;
+}
+
+.restored-info-badge {
+  font-size: 11px;
+  color: #047857;
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+html[data-theme="dark"] .restored-info-badge {
+  color: #6ee7b7;
+  background-color: rgba(16, 185, 129, 0.16);
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+/* ------------------------------------------------------------
+   Backend Connection Status Banner
+   ------------------------------------------------------------ */
+.backend-banner {
+  width: 100%;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--card-shadow);
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.live-indicator {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
+}
+
+.banner-text {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+.banner-text strong {
+  color: var(--text);
+}
+
+.banner-text code {
+  color: var(--primary);
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11.5px;
+}
+
+.banner-time {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-family: monospace;
+}
+
+.error-banner {
+  width: 100%;
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+html[data-theme="dark"] .error-banner {
+  background-color: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+/* ------------------------------------------------------------
+   Master Inventory Station Launcher Card
+   ------------------------------------------------------------ */
+.master-inventory-launch-card {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.2s ease;
+}
+
+.master-inventory-launch-card:hover {
+  border-color: var(--border-accent) !important;
+  box-shadow: var(--card-shadow-hover);
+}
+
+.launch-card-icon-box {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(37, 99, 235, 0.2) 100%);
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.launch-card-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--primary);
+}
+
+.launch-card-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.launch-card-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.launch-card-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 16px;
+}
+
+.launch-mini-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.launch-stat-val {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.launch-stat-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.btn-open-inventory-tab {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.3);
+  white-space: nowrap;
+}
+
+.btn-open-inventory-tab:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* ------------------------------------------------------------
+   Live Kitchen Inventory Header Card
+   ------------------------------------------------------------ */
+.kitchen-inventory-header-card {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px;
+  padding: 20px 24px;
+  box-shadow: var(--card-shadow);
+}
+
+.kitchen-inv-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  background-color: var(--primary-subtle);
+  border: 1px solid var(--primary-border);
+  padding: 2px 8px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.live-pulsing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+.kitchen-inv-title {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.kitchen-inv-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.channel-stat-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.channel-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--border);
+  transition: height 0.2s ease;
+}
+
+.stat-card-total::before {
+  background: var(--primary);
+}
+
+.stat-card-swiggy::before {
+  background: var(--channel-swiggy);
+}
+
+.stat-card-zomato::before {
+  background: var(--channel-zomato);
+}
+
+.stat-card-direct::before {
+  background: var(--channel-direct);
+}
+
+.channel-stat-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.channel-stat-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.channel-stat-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.channel-stat-value {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.channel-stat-sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.channel-dot-swiggy {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--channel-swiggy);
+  box-shadow: 0 0 6px rgba(249, 115, 22, 0.4);
+}
+
+.channel-dot-zomato {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--channel-zomato);
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+}
+
+.channel-dot-direct {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--channel-direct);
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.4);
+}
+
+.stat-card-total .channel-stat-value {
+  color: var(--primary);
+}
+
+.stat-card-swiggy .channel-stat-value {
+  color: var(--channel-swiggy);
+}
+
+.stat-card-zomato .channel-stat-value {
+  color: var(--channel-zomato);
+}
+
+.stat-card-direct .channel-stat-value {
+  color: var(--channel-direct);
+}

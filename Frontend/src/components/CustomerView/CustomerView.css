@@ -1,0 +1,618 @@
+/* ========================================================
+   Customer View (Mock Delivery) Styling (Theme-Adaptive)
+   ======================================================== */
+.customer-view-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Telemetry Simulation Header */
+.mock-sim-banner {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.mock-sim-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mock-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #8b5cf6;
+  background-color: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  padding: 3px 8px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+.mock-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #8b5cf6;
+  box-shadow: 0 0 6px #8b5cf6;
+  animation: pulse-dot 2s infinite;
+}
+
+.mock-sim-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.mock-sim-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 800px;
+}
+
+.btn-switch-to-inventory {
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-switch-to-inventory:hover {
+  background-color: var(--surface);
+  border-color: var(--border-accent);
+  transform: translateY(-1px);
+}
+
+/* Floating Mock Order Toast Notification */
+.mock-order-toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  background-color: var(--surface);
+  border: 1px solid var(--primary-border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  animation: slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-width: 440px;
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.toast-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toast-icon-circle {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.toast-msg-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 2px 0;
+}
+
+.toast-msg-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.toast-close-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+.toast-close-btn:hover {
+  color: var(--text);
+}
+
+/* Platform Switcher Buttons */
+.platform-tab-btn {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  color: var(--text-secondary);
+  box-shadow: var(--card-shadow);
+}
+
+.platform-tab-btn:hover {
+  background-color: var(--surface-subtle);
+  border-color: var(--border-accent);
+}
+
+.platform-icon-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-swiggy {
+  background-color: #f97316;
+}
+
+.dot-zomato {
+  background-color: #ef4444;
+}
+
+.dot-direct {
+  background-color: #10b981;
+}
+
+.platform-tab-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  flex-grow: 1;
+  text-align: left;
+}
+
+.platform-tab-eta {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.platform-tab-btn.tab-swiggy.active {
+  border-color: #f97316;
+  background-color: rgba(249, 115, 22, 0.08);
+}
+
+.platform-tab-btn.tab-zomato.active {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.platform-tab-btn.tab-direct.active {
+  border-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.08);
+}
+
+/* Simulated App Frame */
+.mock-app-frame {
+  background-color: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+}
+
+.mock-store-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mock-store-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  width: fit-content;
+}
+
+.mock-restaurant-name {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.mock-store-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.store-rating {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.store-eta {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.store-stock-count {
+  color: #10b981;
+  font-weight: 600;
+}
+
+.meta-separator {
+  color: var(--muted);
+}
+
+.mock-tagline {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.mock-channel-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.mock-status-circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Category Filter Bar */
+.mock-category-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
+}
+
+.category-bar-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.category-pills-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.category-pill:hover {
+  background-color: var(--surface);
+  color: var(--text);
+  border-color: var(--border-accent);
+}
+
+.category-pill.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Dishes Grid Cards */
+.mock-dish-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.mock-dish-card:hover {
+  border-color: var(--border-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+.mock-dish-card.card-unavailable {
+  opacity: 0.75;
+  background-color: var(--surface-subtle);
+}
+
+.mock-dish-card.card-low-stock {
+  border-color: rgba(245, 158, 11, 0.4);
+  background-color: rgba(245, 158, 11, 0.03);
+}
+
+.customer-dish-img-container {
+  border-color: var(--border) !important;
+  border-radius: 10px;
+  background: #0f172a;
+}
+
+.customer-dish-img-container img {
+  transition: transform 0.3s ease;
+}
+
+.mock-dish-card:hover .customer-dish-img-container img {
+  transform: scale(1.04);
+}
+
+.dish-category-tag {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #f8fafc;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3px 7px;
+  border-radius: 6px;
+}
+
+.dish-sku-tag {
+  font-size: 10px;
+  font-family: monospace;
+  color: #cbd5e1;
+  background-color: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3px 6px;
+}
+
+.customer-sold-out-overlay {
+  background-color: rgba(15, 23, 42, 0.78);
+  backdrop-filter: blur(3px);
+}
+
+.dish-name {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.dish-price {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.dish-status-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 12px;
+}
+
+.badge-in-stock {
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+html[data-theme="dark"] .badge-in-stock {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.badge-low-stock {
+  background-color: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+html[data-theme="dark"] .badge-low-stock {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.badge-out-of-stock,
+.badge-delisted,
+.badge-master-off {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+html[data-theme="dark"] .badge-out-of-stock,
+html[data-theme="dark"] .badge-delisted,
+html[data-theme="dark"] .badge-master-off {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+.dish-stock-info {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.btn-mock-order {
+  color: #ffffff;
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-mock-order:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.btn-mock-disabled {
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 9px 12px;
+  border-radius: 8px;
+  cursor: not-allowed;
+}
+
+/* Simulated Orders Activity Log */
+.mock-orders-log-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--card-shadow);
+}
+
+.log-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.log-card-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.log-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.log-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.log-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background-color: var(--surface-subtle);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.log-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.log-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+}
+
+.log-dish-name {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.log-platform-tag {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--muted);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.log-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.log-remaining {
+  color: var(--text-secondary);
+}
+
+.log-time {
+  color: var(--muted);
+  font-family: monospace;
+}
